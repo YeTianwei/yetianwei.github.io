@@ -43,13 +43,19 @@
   "publications": "",
   "skills": [
     {
-    "name": "Deep learning",
+    "name": "Software",
     "level": "Master",
     "keywords": [
-      "Python",
-      "PyTorch",
-      "Matlab"]
-    }
+      "Matlab",
+      "LaTeX"]
+    },
+    {
+      "name": "Coding",
+      "level": "Master",
+      "keywords": [
+        "Python",
+        "PyTorch"]
+      }
   ],
   "languages": [
     {
