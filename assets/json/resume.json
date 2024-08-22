@@ -8,7 +8,7 @@
     "url": "https://yetianwei.github.io",
     "summary": "",
     "location": "",
-    "profiles": "",
+    "profiles": ""
   },
   "work": "",
   "volunteer": "",
@@ -20,7 +20,7 @@
       "area": "Electronic Information",
       "studyType": "Master",
       "startDate": "2024-09",
-      "endDate": "",
+      "endDate": ""
     },
     {
       "institution": "Central South University",
@@ -29,15 +29,14 @@
       "area": "Electronic Information Science and Technology",
       "studyType": "Bachelor",
       "startDate": "2020-09",
-      "endDate": "2024-06",
+      "endDate": "2024-06"
     }
   ],
   "awards": [
     {
       "title": "Outstanding Graduates",
       "date": "2024",
-      "awarder": "Central South University",
-      # "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "awarder": "Central South University"
     }
   ],
   "certificates": "",
@@ -73,5 +72,5 @@
   ],
   "interests": "",
   "references": "",
-  "projects": "",
+  "projects": ""
 }
