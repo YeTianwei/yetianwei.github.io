@@ -20,4 +20,4 @@ social: false # includes social icons at the bottom of the page
 
 I am Tianwei Ye, who is a master student at [Wuhan University](https://www.whu.edu.cn/) under the supervision of [Prof.Jiayi Ma](https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en&oi=ao) in the [Multi-spectral Visual information Processing group](https://mvp.whu.edu.cn/index.htm). Before that I received my Bechelor's degree from [Central South University](https://www.csu.edu.cn/) in 2024.
 
-My research interest is related to 3D computer vision, including shape matching, 3D reconstruction. If you have interest to collaborate with me, feel free to contact me.
+My research interest is mainly related to 3D computer vision and geometry processing. I am also broadly interested in computer graphics and computer vision in general. Currently I am working on 3D shape matching. If you have interest to collaborate with me, feel free to contact me.
