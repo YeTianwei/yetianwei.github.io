@@ -36,13 +36,14 @@
     {
       "title": "Outstanding Graduates",
       "date": "2024.06",
-      "awarder": "Central South University"
+      "awarder": "Central South University",
+      "summary": "Awarded to the top 5% of graduates"
     },
     {
       "title": "China Undergraduate Mathematical Contest in Modeling First Prize in Hunan Province",
       "date": "2022.09",
-      "summary": "",
-      "awarder": "China Society for Industrial and Applied Mathematics"
+      "awarder": "China Society for Industrial and Applied Mathematics",
+      "summary":"Recognized for outstanding problem-solving and modeling skills"
     }
   ],
   "certificates": "",
