@@ -49,19 +49,27 @@
   "publications": "",
   "skills": [
     {
-    "name": "Software",
+    "name": "Progarmming",
     "level": "Master",
     "keywords": [
+      "Python",
+      "C/C++",
       "Matlab",
       "LaTeX"]
     },
     {
-      "name": "Coding",
+      "name": "Operating Systems",
       "level": "Master",
       "keywords": [
-        "Python",
+        "Windows",
+        "Lunix"]
+    },
+    {
+      "name": "Deeping Learning",
+      "level": "Master",
+      "keywords": [
         "PyTorch"]
-      }
+    }
   ],
   "languages": [
     {
