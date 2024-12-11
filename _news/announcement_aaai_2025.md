@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-08-16
+date: 2024-12-09
 inline: true
 related_posts: false
 ---
 
-A paper submitted to AAAI.
+One papers was accepted to AAAI!
