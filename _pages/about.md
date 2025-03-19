@@ -18,6 +18,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I am Tianwei Ye, who is a master student at [Wuhan University](https://www.whu.edu.cn/) under the supervision of [Prof.Jiayi Ma](https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en&oi=ao) in the [Multi-spectral Visual information Processing group](https://mvp.whu.edu.cn/index.htm). Before that I received my Bechelor's degree from [Central South University](https://www.csu.edu.cn/) in 2024.
+I am Tianwei Ye, a master student at [Wuhan University](https://www.whu.edu.cn/) under the supervision of [Prof.Jiayi Ma](https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en&oi=ao) in the [Multi-spectral Visual information Processing group](https://mvp.whu.edu.cn/index.htm). Before that I received my Bechelor's degree from [Central South University](https://www.csu.edu.cn/) in 2024.
 
-My research focuses on 3D computer vision and geometry processing, with broader interests in computer graphics and computer vision. Currently, I am working on 3D shape matching. If you have interest to collaborate with me, feel free to contact me.
+I have a broad interest in computer vision and graphics, particularly in 3D vision. I am currently working on 3D shape matching with deep learning and optimization techniques. If you have interest to collaborate with me, feel free to contact me.
