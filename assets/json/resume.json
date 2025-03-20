@@ -35,19 +35,27 @@
   "awards": [
     {
       "title": "Outstanding Graduates",
-      "date": "2024.06",
+      "date": "2024-06",
       "awarder": "Central South University",
       "summary": "Awarded to the top 5% of graduates"
     },
     {
       "title": "China Undergraduate Mathematical Contest in Modeling First Prize in Hunan Province",
-      "date": "2022.09",
+      "date": "2022-09",
       "awarder": "China Society for Industrial and Applied Mathematics",
-      "summary":"Recognized for outstanding problem-solving and modeling skills"
+      "summary":""
     }
   ],
   "certificates": "",
-  "publications": "",
+  "publications": [
+    {
+      "name": "Multi-Shape Matching with Cycle Consistency Basis via Functional Maps",
+      "publisher": "AAAI 2025",
+      "releaseDate": "2025-03",
+      "url": "https://github.com/YeTianwei/CyCoMatch",
+      "summary": ""
+    }
+  ],
   "skills": [
     {
     "name": "Progarmming",
@@ -84,5 +92,12 @@
   ],
   "interests": "",
   "references": "",
-  "projects": ""
+  "projects": [
+    {
+      "name": "UAV-Based Hyperspectral Imaging Technology for Precise Detection of Marine Pollution",
+      "highlights": "Intended to establish a novel demonstration application for early detection and parameter inversion of typical marine pollutants",
+      "startDate": "2025-01",
+      "endDate": ""
+    }
+  ]
 }
