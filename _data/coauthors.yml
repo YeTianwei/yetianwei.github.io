@@ -32,3 +32,19 @@
 "planck":
   - firstname: ["Max"]
     url: https://en.wikipedia.org/wiki/Max_Planck
+
+"jiayi":
+  - firstname: ["Ma"]
+    url: https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en
+
+"yifan":
+  - firstname: ["Xia"]
+    url: https://scholar.google.com/citations?user=tDRACAQAAAAJ&hl=en&oi=ao
+
+"zhongyuan":
+  - firstname: ["Wang"]
+    url: https://scholar.google.com/citations?user=C76RWZMAAAAJ&hl=en&oi=ao
+
+"huabing":
+  - firstname: ["Zhou"]
+    url: https://scholar.google.com/citations?user=9JwkFBEAAAAJ&hl=en&oi=ao
