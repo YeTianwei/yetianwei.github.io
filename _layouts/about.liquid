@@ -20,25 +20,10 @@ layout: default
         </h1>
         <p class="desc">
           {{ site.current_status }}<br>
+          {{ site.lab_info }}<br>
           {{ site.affiliation }}<br>
-          {{ site.office }}<br>
           {{ site.email_contact }}
         </p>
-
-        <!-- Social Icons -->
-        <div class="social-small">
-          <div class="contact-icons">
-            <a href="mailto:{{ site.email | encode_email }}" title="Email"><i class="fas fa-envelope"></i></a>
-            <span class="divider" style="margin: 0 5px;"></span>
-            {% if site.scholar_userid %}
-              <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-              <span class="divider" style="margin: 0 5px;"></span>
-            {% endif %}
-            {% if site.github_username %}
-              <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fab fa-github"></i></a>
-            {% endif %}
-          </div>
-        </div>
       </div>
     </div>
   </header>
@@ -69,7 +54,6 @@ layout: default
 
     {% if page.social %}
       <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
