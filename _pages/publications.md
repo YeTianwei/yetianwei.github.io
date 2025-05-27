@@ -14,6 +14,7 @@ nav_order: 2
 {% include bib_search.liquid %}
 
 <div class="publications">
+<sup>*</sup> Equal Contribution, <sup>†</sup> Corresponding Author(s).
 
 {% bibliography %}
 
