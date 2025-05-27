@@ -8,10 +8,6 @@ profile:
   align: right
   image: personal.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>{{ site.current_status }}</p>
-    <p>{{ site.affiliation }}</p>
-    <p>{{ site.email_contact }}</p>
   # more_info: >
   #   <p>555 your office number</p>
   #   <p>123 your address street</p>
