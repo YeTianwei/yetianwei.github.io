@@ -15,7 +15,12 @@ layout: default
       <!-- Name and Info -->
       <div class="col-sm-9" style="text-align: left;">
         <h1 class="post-title">
-          {{ site.first_name }} {{ site.last_name }}
+          {% if site.title == 'blank' %}
+            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+            {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
         </h1>
         <p class="desc">
           {{ site.current_status }}<br>
