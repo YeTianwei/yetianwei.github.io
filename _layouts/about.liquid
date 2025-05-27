@@ -4,17 +4,16 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-    <div class="d-flex align-items-center">
-      <!-- Profile Image -->
+    <div class="d-flex align-items-center mb-4">
       {% if page.profile.image %}
-        <div class="profile float-left" style="margin-right: 20px;">
+        <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}" style="margin-{% if page.profile.align == 'left' %}right{% else %}left{% endif %}: 20px;">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           <img src="{{ profile_image_path }}" alt="Profile image" class="img-fluid profile-img" style="height: 200px; object-fit: cover; border-radius: 10px;">
         </div>
       {% endif %}
 
-      <!-- Name and Basic Info -->
-      <div class="col-sm-9">
+      <!-- Name and Info -->
+      <div class="col-sm-9" style="text-align: left;">
         <h1 class="post-title">
           {{ site.first_name }} {{ site.last_name }}
         </h1>
