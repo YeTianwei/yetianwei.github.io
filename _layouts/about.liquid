@@ -13,7 +13,7 @@ layout: default
       {% endif %}
 
       <!-- Name and Info -->
-      <div class="col-sm-9" style="text-align: left;">
+      <div class="col-sm-9 pl-3" style="text-align: left;">
         <h1 class="post-title">
           {% if site.title == 'blank' %}
             <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
@@ -22,12 +22,40 @@ layout: default
             {{ site.title }}
           {% endif %}
         </h1>
+
         <p class="desc">
           {{ site.current_status }}<br>
           {{ site.lab_info }}<br>
           {{ site.affiliation }}<br>
           {{ site.email_contact }}
         </p>
+
+        <!-- Social icons below personal info -->
+        <div class="contact-icons mt-2">
+          {% if site.scholar_userid %}
+            <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar">
+              <i class="ai ai-google-scholar ai-lg mr-2"></i>
+            </a>
+          {% endif %}
+
+          {% if site.github_username %}
+            <a href="https://github.com/{{ site.github_username }}" title="GitHub">
+              <i class="fab fa-github fa-lg mr-2"></i>
+            </a>
+          {% endif %}
+
+          {% if site.linkedin_username %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
+              <i class="fab fa-linkedin fa-lg mr-2"></i>
+            </a>
+          {% endif %}
+
+          {% if site.orcid_id %}
+            <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID">
+              <i class="ai ai-orcid ai-lg mr-2"></i>
+            </a>
+          {% endif %}
+
       </div>
     </div>
   </header>

@@ -20,6 +20,6 @@ social: true # includes social icons at the bottom of the page
 
 I am a first-year Master's student in the [Multi-spectral Visual Information Processing Group](https://mvp.whu.edu.cn/index.htm), [Electronic Information School](http://eis.whu.edu.cn/), [Wuhan University](https://www.whu.edu.cn/), under the supervision of Prof. [Jiayi Ma](https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en&oi=ao) and Prof. [Yong Ma](https://scholar.google.com/citations?hl=en&user=x3Q8PHIAAAAJ&view_op=list_works&sortby=pubdate) . Before that I received my Bechelor's degree from [Central South University](https://www.csu.edu.cn/) in 2024.
 
-I have a broad interest in computer vision and graphics, particularly in 3D vision. I am now working on 3D shape matching with deep learning and optimization techniques. If you have interest to collaborate with me, feel free to contact me.
+I have a broad interest in computer vision and graphics, particularly in 3D vision. I am now working on 3D shape matching with deep learning and optimization techniques.
 
-Currently, I'm seeking PhD opportunities with a focus on Computer Vision.
+Currently, I'm seeking PhD opportunities starting on Fall 2026. If you have interest, feel free to contact me.
