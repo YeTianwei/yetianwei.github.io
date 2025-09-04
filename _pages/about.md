@@ -22,4 +22,4 @@ I am a first-year Master's student in the [Multi-spectral Visual Information Pro
 
 I have a broad interest in computer vision and graphics, particularly in 3D vision. I am currently working on 3D shape matching with deep learning and optimization techniques.
 
-I am currently seeking PhD opportunities starting in Fall 2026. I would be glad to discuss any potential research opportunities — please feel free to get in touch.
+I am seeking PhD opportunities starting in Fall 2026 and would be glad to discuss potential research directions. Please feel free to get in touch.
