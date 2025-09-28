@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a first-year Master's student in the [Multi-spectral Visual Information Processing Group](https://mvp.whu.edu.cn/index.htm), [Electronic Information School](http://eis.whu.edu.cn/), [Wuhan University](https://www.whu.edu.cn/), under the supervision of Prof. [Jiayi Ma](https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en&oi=ao) and Prof. [Yong Ma](https://scholar.google.com/citations?hl=en&user=x3Q8PHIAAAAJ&view_op=list_works&sortby=pubdate). Before that, I received my Bachelor's degree from [Central South University](https://www.csu.edu.cn/) in 2024.
+I am a Master's student in the [Multi-spectral Visual Information Processing Group](https://mvp.whu.edu.cn/index.htm), [Electronic Information School](http://eis.whu.edu.cn/), [Wuhan University](https://www.whu.edu.cn/), under the supervision of Prof. [Jiayi Ma](https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en&oi=ao) and Prof. [Yong Ma](https://scholar.google.com/citations?hl=en&user=x3Q8PHIAAAAJ&view_op=list_works&sortby=pubdate). Before that, I received my Bachelor's degree from [Central South University](https://www.csu.edu.cn/) in 2024.
 
 I have a broad interest in computer vision and graphics, particularly in 3D vision. I am currently working on 3D shape matching with deep learning and optimization techniques.
 
