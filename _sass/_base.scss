@@ -267,7 +267,7 @@ ul.task-list input[type="checkbox"] {
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.06),
     0 8px 24px rgba(0, 0, 0, 0.06);
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 2rem;
   border: 1px solid var(--global-divider-color);
   transition: box-shadow 0.3s ease;
 
@@ -280,7 +280,7 @@ ul.task-list input[type="checkbox"] {
 
 .profile-card-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
 }
 
@@ -308,6 +308,7 @@ ul.task-list input[type="checkbox"] {
   line-height: 1.2;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.03em;
+  white-space: nowrap;
 
   .first-name {
     color: var(--global-theme-color);
