@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <!-- Hero Section -->
 <div class="hero-section">
   <div class="hero-content">
@@ -17,7 +16,8 @@ layout: default
         <div class="profile-info">
           <h1 class="profile-name">
             {% if site.title == 'blank' %}
-              <span class="first-name">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+              <span class="first-name">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
             {% else %}
               {{ site.title }}
             {% endif %}

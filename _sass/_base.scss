@@ -5,7 +5,12 @@
 // Typography
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.011em;
@@ -27,14 +32,20 @@ strong {
   color: var(--global-text-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Serif 4', 'Georgia', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif 4", "Georgia", serif;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-code, pre {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+code,
+pre {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
 }
 
 hr {
@@ -219,7 +230,7 @@ ul.task-list input[type="checkbox"] {
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     right: -20%;
@@ -231,7 +242,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -30%;
     left: -10%;
@@ -253,13 +264,17 @@ ul.task-list input[type="checkbox"] {
 .profile-card {
   background: var(--global-card-bg-color);
   border-radius: 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.06);
   padding: 2rem 2.5rem;
   border: 1px solid var(--global-divider-color);
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.1);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.06),
+      0 12px 32px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -279,7 +294,7 @@ ul.task-list input[type="checkbox"] {
   max-width: 180px !important;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .profile-info {
@@ -291,7 +306,7 @@ ul.task-list input[type="checkbox"] {
   font-weight: 700;
   margin-bottom: 0.5rem;
   line-height: 1.2;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: -0.03em;
 
   .first-name {
@@ -518,7 +533,7 @@ html[data-theme="dark"] .navbar {
 
   .navbar-brand {
     color: var(--global-text-color);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 600;
     letter-spacing: -0.02em;
   }
@@ -942,7 +957,7 @@ footer.sticky-bottom {
       &:hover {
         background: var(--global-card-bg-color);
         border-color: var(--global-divider-color);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
 
       .preview {
@@ -1596,7 +1611,7 @@ ninja-keys::part(ninja-input-wrapper) {
   border-radius: 6px;
   white-space: nowrap;
   flex-shrink: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0;
 }
 
