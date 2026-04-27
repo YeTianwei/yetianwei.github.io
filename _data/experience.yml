@@ -3,7 +3,7 @@
   advisor: "Prof. Jiayi Ma & Prof. Yong Ma"
   year_start: "2024.09"
   year_end: "Present"
-  logo: "assets/img/experience/whu-logo.png"
+  icon: "fas fa-graduation-cap"
   url: "https://www.whu.edu.cn/"
 
 - title: "Research Intern"
@@ -12,12 +12,12 @@
   advisor: "Prof. Song Guo"
   year_start: "2025.11"
   year_end: "Present"
-  logo: "assets/img/experience/hkust-logo.png"
+  icon: "fas fa-briefcase"
   url: "https://www.hkust.edu.hk/"
 
 - title: "B.E. in Electronic Information Science and Technology"
   institution: "Central South University"
   year_start: "2020.09"
   year_end: "2024.06"
-  logo: "assets/img/experience/csu-logo.png"
+  icon: "fas fa-graduation-cap"
   url: "https://www.csu.edu.cn/"
