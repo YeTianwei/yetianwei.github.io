@@ -2,85 +2,101 @@
 layout: default
 ---
 
-<div class="post">
-  <header class="post-header">
-    <div class="d-flex align-items-center mb-4">
-      {% if page.profile.image %}
-        <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}" style="margin-{% if page.profile.align == 'left' %}right{% else %}left{% endif %}: 20px;">
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          <img src="{{ profile_image_path }}" alt="Profile image" class="img-fluid profile-img" style="height: 200px; object-fit: cover; border-radius: 10px;">
-        </div>
-      {% endif %}
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="profile-card">
+      <div class="profile-card-inner">
+        {% if page.profile.image %}
+          <div class="profile-photo-wrapper">
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            <img src="{{ profile_image_path }}" alt="Profile image" class="profile-photo">
+          </div>
+        {% endif %}
 
-      <!-- Name and Info -->
-      <div class="col-sm-9" style="text-align: left;">
-        <h1 class="post-title">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
-        </h1>
+        <div class="profile-info">
+          <h1 class="profile-name">
+            {% if site.title == 'blank' %}
+              <span class="first-name">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %}
+          </h1>
 
-        <p class="desc">
-          {{ site.current_status }}<br>
-          {{ site.lab_info }}<br>
-          {{ site.affiliation }}<br>
-          {{ site.email_contact }}
-        </p>
+          <div class="profile-meta">
+            <span class="profile-status">{{ site.current_status }}</span>
+            <span class="profile-affiliation">{{ site.affiliation }}</span>
+            <span class="profile-lab">{{ site.lab_info }}</span>
+          </div>
 
-        <!-- Social icons below personal info -->
-        <div class="contact-icons mt-2">
-          {% if site.scholar_userid %}
-            <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar">
-              <i class="ai ai-google-scholar ai-lg mr-2"></i>
+          <p class="profile-email">{{ site.email_contact }}</p>
+
+          <div class="profile-social-icons">
+            {% if site.scholar_userid %}
+              <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar" class="social-icon-link">
+                <i class="ai ai-google-scholar"></i>
+              </a>
+            {% endif %}
+            {% if site.github_username %}
+              <a href="https://github.com/{{ site.github_username }}" title="GitHub" class="social-icon-link">
+                <i class="fab fa-github"></i>
+              </a>
+            {% endif %}
+            {% if site.linkedin_username %}
+              <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn" class="social-icon-link">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            {% endif %}
+            {% if site.orcid_id %}
+              <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID" class="social-icon-link">
+                <i class="ai ai-orcid"></i>
+              </a>
+            {% endif %}
+            <a href="{{ '/assets/pdf/cv_TianweiYe.pdf' | relative_url }}" title="CV" class="social-icon-link">
+              <i class="ai ai-cv"></i>
             </a>
-          {% endif %}
-          {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" title="GitHub">
-              <i class="fab fa-github fa-lg mr-2"></i>
-            </a>
-          {% endif %}
-          {% if site.linkedin_username %}
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
-              <i class="fab fa-linkedin fa-lg mr-2"></i>
-            </a>
-          {% endif %}
-          {% if site.orcid_id %}
-            <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID">
-              <i class="ai ai-orcid ai-lg mr-2"></i>
-            </a>
-          {% endif %}
-          <a href="{{ '/assets/pdf/cv_TianweiYe.pdf' | relative_url }}" title="CV">
-            <i class="ai ai-cv ai-lg mr-2"></i>
-          </a>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</div>
 
+<!-- Main Content -->
+<div class="post about-content">
   <article>
-    <div class="clearfix">{{ content }}</div>
+    <section class="about-bio">
+      {{ content }}
+    </section>
 
     {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">🔥 News</a>
-      </h2>
-      {% include news.liquid limit=true %}
+      <section class="about-section">
+        <h2 class="section-heading">
+          <span class="section-icon">&#x1F525;</span>
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      </section>
     {% endif %}
 
     {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">📝 Latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
+      <section class="about-section">
+        <h2 class="section-heading">
+          <span class="section-icon">&#x1F4DD;</span>
+          <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest posts</a>
+        </h2>
+        {% include latest_posts.liquid %}
+      </section>
     {% endif %}
 
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">📃 Selected Publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <section class="about-section">
+        <h2 class="section-heading">
+          <span class="section-icon">&#x1F4C3;</span>
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+        </h2>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
 
     {% if page.social %}
