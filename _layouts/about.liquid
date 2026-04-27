@@ -99,6 +99,16 @@ layout: default
       </section>
     {% endif %}
 
+    {% if page.experience %}
+      <section class="about-section">
+        <h2 class="section-heading">
+          <span class="section-icon">&#x1F393;</span>
+          <a style="color: inherit">Experience</a>
+        </h2>
+        {% include experience.liquid %}
+      </section>
+    {% endif %}
+
     {% if page.social %}
       <div class="social">
         <div class="contact-note">{{ site.contact_note }}</div>

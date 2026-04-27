@@ -1,0 +1,26 @@
+<div class="experience-list">
+  {% for item in site.data.experience %}
+    <div class="experience-item">
+      <div class="experience-icon">
+        <i class="{{ item.icon }}"></i>
+      </div>
+      <div class="experience-content">
+        <div class="experience-header">
+          <h3 class="experience-title">{{ item.title }}</h3>
+          <span class="experience-date">{{ item.year_start }} — {{ item.year_end }}</span>
+        </div>
+        <div class="experience-detail">
+          {% if item.url %}
+            <a href="{{ item.url }}" target="_blank">{{ item.institution }}</a>
+          {% else %}
+            {{ item.institution }}
+          {% endif %}
+          {% if item.department %}, {{ item.department }}{% endif %}
+        </div>
+        {% if item.advisor %}
+          <div class="experience-advisor">Advisor: {{ item.advisor }}</div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
