@@ -224,39 +224,18 @@ ul.task-list input[type="checkbox"] {
 
 .hero-section {
   background: var(--global-hero-gradient);
-  margin: -3rem calc(-50vw + 50%) 0;
-  padding: 3rem calc(50vw - 50%) 3.5rem;
+  padding: 2.5rem 0 3rem;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: rgba(79, 70, 229, 0.06);
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: rgba(139, 92, 246, 0.05);
-    pointer-events: none;
-  }
+  // break out of .container
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: -3rem;
 }
 
 .hero-content {
-  max-width: 930px;
+  max-width: 870px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   position: relative;
   z-index: 1;
 }
@@ -270,6 +249,7 @@ ul.task-list input[type="checkbox"] {
   padding: 1.5rem 2rem;
   border: 1px solid var(--global-divider-color);
   transition: box-shadow 0.3s ease;
+  overflow: hidden;
 
   &:hover {
     box-shadow:
@@ -279,32 +259,39 @@ ul.task-list input[type="checkbox"] {
 }
 
 .profile-card-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 1.5rem;
 }
 
 .profile-photo-wrapper {
-  flex-shrink: 0;
+  flex: 0 0 160px;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
 .profile-photo {
-  width: 180px !important;
-  height: 180px !important;
-  max-width: 180px !important;
+  display: block !important;
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .profile-info {
-  flex: 1;
+  flex: 1 1 0%;
+  min-width: 0;
 }
 
 .profile-name {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   line-height: 1.2;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.03em;
@@ -318,13 +305,13 @@ ul.task-list input[type="checkbox"] {
 .profile-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  margin-bottom: 0.6rem;
+  gap: 0.1rem;
+  margin-bottom: 0.5rem;
 
   span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--global-text-color-light);
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   .profile-status {
@@ -334,14 +321,14 @@ ul.task-list input[type="checkbox"] {
 }
 
 .profile-email {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--global-text-color-light);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .profile-social-icons {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
 }
 
@@ -349,13 +336,13 @@ ul.task-list input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
   color: var(--global-text-color-light) !important;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: all 0.2s ease;
   text-decoration: none !important;
 
@@ -370,14 +357,21 @@ ul.task-list input[type="checkbox"] {
 
 @media (max-width: 768px) {
   .profile-card-inner {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
+    align-items: center !important;
+  }
+
+  .profile-photo-wrapper {
+    flex: 0 0 130px;
+    width: 130px;
+    height: 130px;
   }
 
   .profile-photo {
-    width: 140px !important;
-    height: 140px !important;
-    max-width: 140px !important;
+    width: 130px !important;
+    height: 130px !important;
+    max-width: 130px !important;
   }
 
   .profile-meta {
@@ -389,7 +383,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   .hero-section {
-    padding: 2rem 1rem 2.5rem;
+    padding: 1.5rem 0 2rem;
   }
 }
 
