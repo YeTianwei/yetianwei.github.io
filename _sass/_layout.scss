@@ -32,9 +32,9 @@ body.sticky-bottom-footer {
   max-width: $max-content-width;
 }
 
-// Profile
-.profile {
-  img {
+// Profile (legacy - scoped to avoid affecting new hero section)
+.profile:not(.profile-photo-wrapper) {
+  img:not(.profile-photo) {
     width: 100%;
   }
 }
