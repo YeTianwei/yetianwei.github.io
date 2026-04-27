@@ -2,7 +2,11 @@
   {% for item in site.data.experience %}
     <div class="experience-item">
       <div class="experience-icon">
-        <i class="{{ item.icon }}"></i>
+        {% if item.logo %}
+          <img src="{{ item.logo | relative_url }}" alt="{{ item.institution }}" class="experience-logo">
+        {% elsif item.icon %}
+          <i class="{{ item.icon }}"></i>
+        {% endif %}
       </div>
       <div class="experience-content">
         <div class="experience-header">
