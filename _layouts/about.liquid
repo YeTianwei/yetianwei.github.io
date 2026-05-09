@@ -47,6 +47,15 @@ layout: default
                 <i class="fab fa-linkedin"></i>
               </a>
             {% endif %}
+            {% if site.wechat_qr %}
+              <a id="WeChatBtn" title="WeChat" class="social-icon-link">
+                <i class="fa-brands fa-weixin"></i>
+              </a>
+              <div id="WeChatMod" class="wechat-modal">
+                <img src="{{ site.wechat_qr | prepend: 'assets/img/' | relative_url }}" alt="WeChat QR" id="WeChatQR">
+              </div>
+              {% include scripts/wechatModal.liquid %}
+            {% endif %}
             {% if site.orcid_id %}
               <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID" class="social-icon-link">
                 <i class="ai ai-orcid"></i>

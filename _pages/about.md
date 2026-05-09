@@ -22,4 +22,4 @@ I am a Master's student in the [Multi-spectral Visual Information Processing Gro
 
 I am broadly interested in computer vision and graphics, especially 3D vision. My past work focused on shape analysis, especially 3D shape matching. Currently, I am working on 3D generation for Embodied AI, with a long-term goal of building intelligent agents that perceive, generate, and interact with the 3D world.
 
-I am seeking PhD opportunities starting in Fall 2026 or Spring 2027. If you have potential openings or would like to collaborate, please feel free to contact me.
+If you would like to collaborate, please feel free to contact me.
