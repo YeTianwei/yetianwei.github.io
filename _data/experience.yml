@@ -1,8 +1,15 @@
+- title: "Ph.D. in Computer Science"
+  institution: "National University of Singapore"
+  year_start: "2026.08"
+  year_end: "Incoming"
+  icon: "fas fa-graduation-cap"
+  url: "https://www.nus.edu.sg/"
+
 - title: "M.S. in Electronic Information"
   institution: "Wuhan University"
   advisor: "Prof. Jiayi Ma & Prof. Yong Ma"
   year_start: "2024.09"
-  year_end: "Present"
+  year_end: "2026.06"
   icon: "fas fa-graduation-cap"
   url: "https://www.whu.edu.cn/"
 
@@ -11,7 +18,7 @@
   department: "PEI-Lab"
   advisor: "Prof. Song Guo"
   year_start: "2025.11"
-  year_end: "Present"
+  year_end: "2026.05"
   icon: "fas fa-briefcase"
   url: "https://www.hkust.edu.hk/"
 
