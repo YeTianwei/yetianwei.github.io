@@ -1,7 +1,8 @@
 - title: "Ph.D. in Computer Science"
   institution: "National University of Singapore"
-  year_start: "2026.08"
-  year_end: "Incoming"
+  advisor: "Prof. Gim Hee Lee"
+  year_start: "2026.8"
+  status: "Incoming"
   icon: "fas fa-graduation-cap"
   url: "https://www.nus.edu.sg/"
 
