@@ -232,17 +232,6 @@ ul.task-list input[type="checkbox"] {
   border: 1px solid var(--global-divider-color);
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 2rem;
-    width: 4.5rem;
-    height: 3px;
-    border-radius: 0 0 999px 999px;
-    background: var(--global-theme-color);
-  }
 }
 
 .hero-content {
@@ -378,11 +367,6 @@ ul.task-list input[type="checkbox"] {
 
   .hero-section {
     padding: 2rem 1.25rem;
-
-    &::before {
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 }
 
