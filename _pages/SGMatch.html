@@ -18,16 +18,43 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <style>
+    :root {
+      --sg-accent: #1f6f8b;
+      --sg-accent-dark: #134e63;
+      --sg-text: #202124;
+      --sg-muted: #6b7280;
+      --sg-rule: #dfe5ea;
+      --sg-soft: #f7fafb;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: var(--sg-text);
+      background: #fff;
+      line-height: 1.65;
+    }
+    .publication-hero .hero-body {
+      padding-top: 2.5rem;
+      padding-bottom: 1.25rem;
+    }
     .publication-title {
       font-family: 'Google Sans', sans-serif;
       font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.14;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.25rem;
     }
     .publication-authors,
     .publication-venue {
       font-family: 'Google Sans', sans-serif;
     }
     .publication-authors a {
-      color: hsl(204, 86%, 53%) !important;
+      color: var(--sg-accent) !important;
     }
     .publication-authors a:hover {
       text-decoration: underline;
@@ -36,19 +63,66 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
       display: inline-block;
       margin: 0 4px;
     }
-    body {
-      font-family: 'Noto Sans', sans-serif;
-    }
     .link-block a {
       margin: 0 4px 8px;
     }
+    .publication-links .button {
+      background: #222;
+      border: 0;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+    .publication-links .button:hover {
+      background: var(--sg-accent-dark);
+      transform: translateY(-1px);
+    }
+    .venue-badge {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.18rem 0.75rem;
+      border: 1px solid rgba(31, 111, 139, 0.22);
+      border-radius: 999px;
+      color: var(--sg-accent-dark);
+      background: var(--sg-soft);
+      font-weight: 700;
+    }
+    .publication-note {
+      margin-top: 0.45rem;
+      color: var(--sg-muted);
+    }
     .section-title {
       font-family: 'Google Sans', sans-serif;
+      letter-spacing: 0;
+      color: #202124;
+      margin-bottom: 1.15rem !important;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 2.5rem;
+      height: 2px;
+      margin-top: 0.45rem;
+      background: var(--sg-accent);
+    }
+    .title.is-4.section-title::after {
+      display: none;
+    }
+    .title.is-4.section-title {
+      margin-bottom: 0.75rem !important;
+    }
+    .section {
+      padding-top: 3.25rem;
+      padding-bottom: 3.25rem;
+    }
+    .section + .section {
+      border-top: 1px solid #f0f2f4;
     }
     .bibtex-body {
-      background-color: #f5f5f5;
-      padding: 1em;
-      border-radius: 6px;
+      background-color: var(--sg-soft);
+      border: 1px solid var(--sg-rule);
+      padding: 1.1em;
+      border-radius: 4px;
       font-size: 0.85em;
       overflow-x: auto;
     }
@@ -60,8 +134,19 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
       line-height: 1.8;
     }
     .teaser-image {
-      max-width: 85%;
+      max-width: 92%;
       margin: 0 auto;
+    }
+    .teaser .hero-body {
+      padding-top: 1.25rem;
+      padding-bottom: 2.5rem;
+    }
+    .teaser-caption {
+      max-width: 860px;
+      margin: 1rem auto 0;
+      color: var(--sg-muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
     }
     .footnote {
       font-size: 0.85em;
@@ -71,47 +156,203 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
       font-size: 0.75em;
       vertical-align: super;
     }
-    .method-card {
-      background: #fafafa;
-      border-left: 4px solid #3273dc;
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
+    .figure-panel {
+      margin: 1.75rem auto 0;
     }
-    .method-card h4 {
+    .figure-panel img {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #edf0f2;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .figure-panel .vis-caption {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .observation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 1.25rem;
+    }
+    .observation-item h3,
+    .method-module h3 {
       font-family: 'Google Sans', sans-serif;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #363636;
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      color: var(--sg-text);
     }
-    .method-card p {
+    .observation-item p,
+    .method-module p {
+      color: var(--sg-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
       margin-bottom: 0;
-      line-height: 1.7;
     }
-    .method-card .tag-accent {
-      display: inline-block;
-      background: #3273dc;
-      color: #fff;
-      font-size: 0.75rem;
-      padding: 2px 10px;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
-      font-family: 'Google Sans', sans-serif;
+    .observation-item img {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.85rem;
+      border: 1px solid #edf0f2;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .method-modules {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.35rem;
+    }
+    .method-module {
+      border-top: 2px solid var(--sg-accent);
+      padding-top: 0.85rem;
+    }
+    .section-lead {
+      color: var(--sg-muted);
+      line-height: 1.75;
+      margin-bottom: 1.3rem;
     }
     .vis-caption {
       font-size: 0.9rem;
-      color: #666;
+      color: var(--sg-muted);
       margin-top: 0.75rem;
       text-align: justify;
       line-height: 1.6;
+    }
+    .table-container {
+      margin-top: 0.85rem;
+    }
+    .compact-table {
+      font-size: 0.86rem;
+      border-collapse: collapse;
+      border-top: 2px solid #242424;
+      border-bottom: 2px solid #242424;
+      background: #fff;
+    }
+    .compact-table th,
+    .compact-table td {
+      padding: 0.42em 0.55em;
+      vertical-align: middle;
+    }
+    .compact-table.table.is-bordered th,
+    .compact-table.table.is-bordered td {
+      border-width: 0 0 1px;
+      border-color: #d9d9d9;
+    }
+    .compact-table td:first-child,
+    .compact-table th:first-child {
+      padding-left: 0.75em;
+    }
+    .compact-table thead th {
+      background: #fff !important;
+      border-bottom: 1.5px solid #242424 !important;
+      color: #222;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+    }
+    .compact-table tbody tr,
+    .compact-table.table.is-striped tbody tr:not(.is-selected):nth-child(even),
+    .compact-table.table.is-striped tbody tr:not(.is-selected):nth-child(odd) {
+      background: #fff !important;
+    }
+    .compact-table.table.is-hoverable tbody tr:not(.is-selected):hover {
+      background: #fafafa !important;
+    }
+    .compact-table tbody tr[style*="background-color"] {
+      background: #fff !important;
+    }
+    .compact-table tbody tr[style*="background-color"] td:first-child {
+      border-left: 3px solid var(--sg-accent) !important;
+    }
+    .compact-table td[colspan] {
+      background: #fff !important;
+      border-top: 1.25px solid #8f8f8f !important;
+      border-bottom: 1px solid #d9d9d9 !important;
+      color: #555 !important;
+      font-family: 'Castoro', serif;
+      font-style: italic;
+    }
+    .compact-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+    .check-mark {
+      color: var(--sg-accent);
+    }
+    .cross-mark {
+      color: #b45353;
+    }
+    .page-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--sg-rule);
+      backdrop-filter: blur(8px);
+    }
+    .page-nav .container {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      text-align: left;
+    }
+    .page-nav a {
+      display: inline-block;
+      padding: 0.72rem 0.95rem;
+      color: #444;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .page-nav a:hover {
+      color: var(--sg-accent);
+    }
+    #abstract,
+    #method,
+    #results,
+    #smoothness,
+    #ablation,
+    #qualitative,
+    #bibtex {
+      scroll-margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 2rem !important;
+      }
+      .section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+      .teaser-image {
+        max-width: 100%;
+      }
+      .observation-grid,
+      .method-modules {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- Navigation -->
+<nav class="page-nav" aria-label="Page navigation">
+  <div class="container is-max-desktop">
+    <a href="#abstract">Abstract</a>
+    <a href="#method">Method</a>
+    <a href="#results">Results</a>
+    <a href="#qualitative">Qualitative</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+</nav>
+
 <!-- Title -->
-<section class="hero">
+<section class="hero publication-hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -136,15 +377,18 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
               Jun Huang,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=73trMQkAAAAJ">Jiayi Ma</a><span class="dagger">†</span>
+              <a href="https://scholar.google.com/citations?user=73trMQkAAAAJ">Jiayi Ma</a><span class="dagger">&dagger;</span>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">Wuhan University</span>
           </div>
-          <div class="is-size-6 publication-venue" style="margin-top: 0.5rem; color: #888;">
-            <span class="dagger">†</span> Corresponding Author
+          <div class="is-size-5 publication-venue venue-badge">
+            ECCV 2026
+          </div>
+          <div class="is-size-6 publication-venue publication-note">
+            <span class="dagger">&dagger;</span> Corresponding Author
           </div>
 
           <!-- Links -->
@@ -181,7 +425,7 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
       <img src="{{ '/assets/img/sgmatch/teaser.png' | relative_url }}" alt="SGMatch teaser" class="teaser-image">
-      <p class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 0.95rem; color: #666;">
+      <p class="subtitle has-text-centered teaser-caption">
         <strong>(Left):</strong> Colormap transfer on the SHREC'19 dataset demonstrates that incorporating semantic features resolves ambiguity and yields globally consistent correspondences.
         <strong>(Right):</strong> Vertex transfer on the SMAL dataset shows that the proposed conditional flow matching regularization promotes spatially smooth correspondences.
       </p>
@@ -189,15 +433,34 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
   </div>
 </section>
 
+<!-- Key Observation -->
+<section class="section" id="observation">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title">Key Observation</h2>
+    <div class="observation-grid">
+      <div class="observation-item">
+        <img src="{{ '/assets/img/sgmatch/feat_sim.png' | relative_url }}" alt="Feature similarity comparison">
+        <h3>Geometry alone is ambiguous.</h3>
+        <p>Intrinsic descriptors can confuse symmetric or self-similar parts, such as left-right limbs, because local geometry does not always identify semantic correspondence.</p>
+      </div>
+      <div class="observation-item">
+        <img src="{{ '/assets/img/sgmatch/cfm_vis.png' | relative_url }}" alt="Flow matching regularization visualization">
+        <h3>Point-wise recovery needs local coherence.</h3>
+        <p>Spectral functional maps provide a compact matching space, but dense projection can still introduce local mismatches that appear as noisy correspondence transitions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Abstract -->
-<section class="section">
+<section class="section" id="abstract">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 section-title">Abstract</h2>
         <div class="content abstract-content">
           <p>
-            Establishing accurate point-to-point correspondences between non-rigid 3D shapes remains a critical challenge, particularly under non-isometric deformations and topological noise. Existing functional map pipelines suffer from ambiguities that geometric descriptors alone cannot resolve, and spatial inconsistencies inherent in the projection of truncated spectral bases to dense pointwise correspondences. In this paper, we introduce <strong>SGMatch</strong>, a learning-based framework for semantic-guided non-rigid shape matching. Specifically, we design a <em>Semantic-Guided Local Cross-Attention</em> module that integrates semantic features from vision foundation models into geometric descriptors while preserving local structural continuity. Furthermore, we introduce a regularization objective based on <em>conditional flow matching</em>, which supervises a time-varying velocity field to encourage spatial smoothness of the recovered correspondences. Experimental results on multiple benchmarks demonstrate that SGMatch achieves competitive performance across near-isometric settings and consistent improvements under non-isometric deformations and topological noise.
+            Establishing accurate point-to-point correspondences between non-rigid 3D shapes remains a critical challenge, particularly under non-isometric deformations and topological noise. Existing functional map pipelines suffer from ambiguities that geometric descriptors alone cannot resolve, and spatial inconsistencies inherent in the projection of truncated spectral bases to dense pointwise correspondences. In this paper, we introduce <strong>SGMatch</strong>, a learning-based framework that couples 3D-lifted semantic cues with trajectory-level feature transport regularization. Specifically, we design a <em>Semantic-Guided Local Cross-Attention</em> module that integrates semantic features from vision foundation models into geometric descriptors while preserving local structural continuity. Furthermore, we adapt <em>conditional flow matching</em> as a time-conditioned feature transport regularizer that promotes spatially coherent point-wise recovery. Experimental results on multiple benchmarks demonstrate that SGMatch achieves competitive performance across near-isometric settings and consistent improvements under non-isometric deformations and topological noise.
           </p>
         </div>
       </div>
@@ -206,59 +469,37 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
 </section>
 
 <!-- Method Overview -->
-<section class="section">
+<section class="section" id="method">
   <div class="container is-max-desktop">
     <h2 class="title is-3 section-title">Method</h2>
-    <div class="content abstract-content" style="margin-bottom: 1.5rem;">
-      <p>SGMatch addresses two fundamental challenges in functional map-based shape matching: <strong>descriptor ambiguity</strong> (e.g., left-right symmetry confusion) and <strong>spatial inconsistency</strong> in recovered point-wise correspondences. Our framework consists of three key components:</p>
-    </div>
-    <div class="has-text-centered" style="margin-bottom: 2rem;">
+    <p class="section-lead">SGMatch combines lifted semantic cues, local feature fusion, functional maps, and flow-based feature transport to recover accurate and spatially coherent non-rigid correspondences.</p>
+    <div class="has-text-centered figure-panel" style="margin-bottom: 2rem;">
       <img src="{{ '/assets/img/sgmatch/framework.png' | relative_url }}" alt="SGMatch framework overview" style="max-width: 100%;">
       <p class="vis-caption has-text-centered"><strong>Overview of SGMatch.</strong> Given a pair of shapes, we extract geometric and semantic features, fuse them via SGLCA, estimate functional maps, and regularize correspondences through spectral heat diffusion and conditional flow matching.</p>
     </div>
 
-    <!-- Feature Extraction -->
-    <div class="method-card">
-      <span class="tag-accent">Step 1</span>
-      <h4><i class="fas fa-cubes" style="color:#3273dc; margin-right:6px;"></i>Dual-Branch Feature Extraction</h4>
-      <p><strong>Geometric branch:</strong> We adopt <a href="https://github.com/nmwsharp/diffusion-net" target="_blank">DiffusionNet</a> to compute per-vertex geometric descriptors that are robust to variations in mesh resolution and sampling density.</p>
-      <p style="margin-top: 0.5rem;"><strong>Semantic branch:</strong> Following <a href="https://arxiv.org/abs/2311.17024" target="_blank">Diff3F</a>, we render each shape from multiple viewpoints, extract dense semantic features using a frozen <a href="https://arxiv.org/abs/2304.07193" target="_blank">DINOv2</a> encoder, and back-project them onto the 3D surface. This provides vertex-level descriptors enriched with high-level semantic awareness that helps resolve symmetric ambiguities.</p>
-    </div>
-
-    <!-- Feature similarity visualization -->
-    <div class="has-text-centered" style="margin-bottom: 2rem;">
-      <img src="{{ '/assets/img/sgmatch/feat_sim.png' | relative_url }}" alt="Feature similarity comparison" style="max-width: 90%;">
-      <p class="vis-caption has-text-centered">Geometric features alone produce ambiguous correspondences in symmetric regions (e.g., left-right limbs). Semantic features from vision foundation models provide complementary cues to resolve these ambiguities.</p>
-    </div>
-
-    <!-- SGLCA -->
-    <div class="method-card" style="border-left-color: #ff6b35;">
-      <span class="tag-accent" style="background:#ff6b35;">Step 2</span>
-      <h4><i class="fas fa-project-diagram" style="color:#ff6b35; margin-right:6px;"></i>Semantic-Guided Local Cross-Attention (SGLCA)</h4>
-      <p>Rather than naively concatenating features, SGLCA uses a <strong>gating mechanism</strong> to adaptively modulate geometric features with semantic context. A lightweight MLP generates channel-wise gates from semantic features, amplifying or attenuating geometric channels based on semantic relevance.</p>
-      <p style="margin-top: 0.5rem;">Attention is then restricted to <strong>local mesh neighborhoods</strong>, where geometric queries attend to semantic keys/values. This avoids spurious global interactions while enabling geometric features to selectively incorporate semantically relevant information from their spatial vicinity.</p>
-    </div>
-
-    <!-- CFM Regularization -->
-    <div class="method-card" style="border-left-color: #23d160;">
-      <span class="tag-accent" style="background:#23d160;">Step 3</span>
-      <h4><i class="fas fa-wind" style="color:#23d160; margin-right:6px;"></i>Conditional Flow Matching Regularization</h4>
-      <p>Even with improved descriptors, spectral truncation still introduces spatial inconsistency in recovered correspondences. We address this with a novel regularization based on <strong>Conditional Flow Matching (CFM)</strong>.</p>
-      <p style="margin-top: 0.5rem;">First, <strong>spectral heat diffusion</strong> smooths the fused features to suppress local noise. Then, we define a linear interpolation path between source and transported target features, and train a velocity field to match the target transport direction. This enforces that spatially adjacent vertices follow <strong>non-divergent transport paths</strong>, discouraging abrupt local transitions and promoting smooth correspondences. An <strong>importance-weighted objective</strong> with Charbonnier loss further improves robustness to outliers.</p>
-    </div>
-
-    <!-- CFM visualization -->
-    <div class="has-text-centered" style="margin-bottom: 1rem;">
-      <img src="{{ '/assets/img/sgmatch/cfm_vis.png' | relative_url }}" alt="Flow matching regularization visualization" style="max-width: 90%;">
-      <p class="vis-caption has-text-centered">Visualization of the effect of conditional flow matching regularization. The flow-based regularization produces spatially smoother correspondences by suppressing local mismatches.</p>
+    <div class="method-modules">
+      <div class="method-module">
+        <h3>3D-Lifted Semantics</h3>
+        <p>Depth- and normal-guided multi-view renderings are encoded by frozen DINOv2 and back-projected to mesh vertices, providing semantic cues that complement DiffusionNet geometry.</p>
+      </div>
+      <div class="method-module">
+        <h3>Local Semantic Fusion</h3>
+        <p>SGLCA uses semantic-guided gates and local cross-attention to inject part-level context while preserving neighborhood structure on the surface.</p>
+      </div>
+      <div class="method-module">
+        <h3>Flow-Regularized Recovery</h3>
+        <p>Fused descriptors estimate bidirectional functional maps, while heat diffusion and conditional flow matching regularize dense point-wise recovery through coherent feature transport.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Results -->
-<section class="section" style="padding-top: 0;">
+<section class="section" id="results">
   <div class="container is-max-desktop">
     <h2 class="title is-3 section-title">Results</h2>
+    <p class="section-lead">SGMatch matches state-of-the-art performance in near-isometric settings and brings clearer gains under non-isometric deformation and topological noise, where semantic cues and flow regularization are most beneficial.</p>
 
     <!-- Near-isometric -->
     <h3 class="title is-4 section-title" style="margin-top: 1.5rem;">Near-Isometric Shape Matching</h3>
@@ -266,7 +507,7 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
       <p>Mean geodesic error (&times;100) on FAUST, SCAPE (near-isometric) and SHREC'19 (cross-dataset generalization).</p>
     </div>
     <div class="table-container">
-      <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="max-width: 700px; margin: 0 auto; font-size: 0.9rem;">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth compact-table" style="max-width: 760px; margin: 0 auto;">
         <thead>
           <tr>
             <th>Method</th>
@@ -281,9 +522,11 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
           <tr><td>Smooth Shells</td><td style="text-align:center;">2.5</td><td style="text-align:center;">4.2</td><td style="text-align:center;">-</td></tr>
           <tr><td>DiscreteOp</td><td style="text-align:center;">5.6</td><td style="text-align:center;">13.1</td><td style="text-align:center;">-</td></tr>
           <tr><td colspan="4" style="text-align:center; font-style:italic; color:#888;">Supervised Methods</td></tr>
+          <tr><td>FMNet</td><td style="text-align:center;">11.0</td><td style="text-align:center;">33.0</td><td style="text-align:center;">-</td></tr>
           <tr><td>GeomFMaps</td><td style="text-align:center;">2.6</td><td style="text-align:center;">3.0</td><td style="text-align:center;">7.9</td></tr>
           <tr><td colspan="4" style="text-align:center; font-style:italic; color:#888;">Unsupervised Methods</td></tr>
           <tr><td>Deep Shell</td><td style="text-align:center;">1.7</td><td style="text-align:center;">2.5</td><td style="text-align:center;">21.1</td></tr>
+          <tr><td>DUO-FMNet</td><td style="text-align:center;">2.5</td><td style="text-align:center;">4.2</td><td style="text-align:center;">6.4</td></tr>
           <tr><td>AttnFMaps</td><td style="text-align:center;">1.9</td><td style="text-align:center;">2.2</td><td style="text-align:center;">5.8</td></tr>
           <tr><td>ULRSSM</td><td style="text-align:center;">1.6</td><td style="text-align:center;">1.9</td><td style="text-align:center;">4.6</td></tr>
           <tr><td>HybridFMap</td><td style="text-align:center;">1.5</td><td style="text-align:center;"><strong>1.8</strong></td><td style="text-align:center;">3.6</td></tr>
@@ -301,26 +544,31 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
       <p>Mean geodesic error (&times;100) on SMAL and DT4D-H. Our method achieves the best overall performance on SMAL, surpassing the previous state-of-the-art by <strong>24%</strong>.</p>
     </div>
     <div class="table-container">
-      <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="max-width: 600px; margin: 0 auto; font-size: 0.9rem;">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth compact-table" style="max-width: 720px; margin: 0 auto;">
         <thead>
           <tr>
             <th>Method</th>
             <th style="text-align:center;">SMAL</th>
-            <th style="text-align:center;">DT4D-H (inter)</th>
             <th style="text-align:center;">DT4D-H (intra)</th>
+            <th style="text-align:center;">DT4D-H (inter)</th>
           </tr>
         </thead>
         <tbody>
           <tr><td colspan="4" style="text-align:center; font-style:italic; color:#888;">Axiomatic Methods</td></tr>
           <tr><td>ZoomOut</td><td style="text-align:center;">38.4</td><td style="text-align:center;">4.0</td><td style="text-align:center;">29.0</td></tr>
           <tr><td>Smooth Shells</td><td style="text-align:center;">30.0</td><td style="text-align:center;">1.2</td><td style="text-align:center;">6.4</td></tr>
+          <tr><td>DiscreteOp</td><td style="text-align:center;">38.1</td><td style="text-align:center;">3.6</td><td style="text-align:center;">27.6</td></tr>
           <tr><td colspan="4" style="text-align:center; font-style:italic; color:#888;">Supervised Methods</td></tr>
+          <tr><td>FMNet</td><td style="text-align:center;">42.0</td><td style="text-align:center;">9.6</td><td style="text-align:center;">38.0</td></tr>
           <tr><td>GeomFMaps</td><td style="text-align:center;">8.4</td><td style="text-align:center;">1.9</td><td style="text-align:center;">4.2</td></tr>
           <tr><td colspan="4" style="text-align:center; font-style:italic; color:#888;">Unsupervised Methods</td></tr>
+          <tr><td>Deep Shell</td><td style="text-align:center;">29.3</td><td style="text-align:center;">3.4</td><td style="text-align:center;">31.1</td></tr>
+          <tr><td>DUO-FMNet</td><td style="text-align:center;">6.7</td><td style="text-align:center;">2.6</td><td style="text-align:center;">15.8</td></tr>
           <tr><td>AttnFMaps</td><td style="text-align:center;">5.4</td><td style="text-align:center;">1.7</td><td style="text-align:center;">11.6</td></tr>
           <tr><td>ULRSSM</td><td style="text-align:center;">3.9</td><td style="text-align:center;"><strong>0.9</strong></td><td style="text-align:center;">4.1</td></tr>
           <tr><td>HybridFMap</td><td style="text-align:center;">3.3</td><td style="text-align:center;">1.0</td><td style="text-align:center;">3.5</td></tr>
           <tr><td>DenoisFMap</td><td style="text-align:center;">4.3</td><td style="text-align:center;">5.8</td><td style="text-align:center;">16.9</td></tr>
+          <tr><td>DiffuMatch</td><td style="text-align:center;">10.1</td><td style="text-align:center;">1.8</td><td style="text-align:center;">8.6</td></tr>
           <tr><td>DeepFAFM</td><td style="text-align:center;">3.8</td><td style="text-align:center;"><strong>0.9</strong></td><td style="text-align:center;">3.9</td></tr>
           <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>2.5</strong></td><td style="text-align:center;">1.0</td><td style="text-align:center;"><strong>3.4</strong></td></tr>
         </tbody>
@@ -330,10 +578,10 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
     <!-- Topological noise -->
     <h3 class="title is-4 section-title" style="margin-top: 2.5rem;">Matching with Topological Noise</h3>
     <div class="content abstract-content">
-      <p>Mean geodesic error (&times;100) on TOPKIDS. Our method achieves a <strong>34%</strong> improvement over the previous best.</p>
+      <p>Mean geodesic error (&times;100) on TOPKIDS. Our method achieves a <strong>42%</strong> improvement over the previous best.</p>
     </div>
     <div class="table-container">
-      <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="max-width: 400px; margin: 0 auto; font-size: 0.9rem;">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth compact-table" style="max-width: 460px; margin: 0 auto;">
         <thead>
           <tr>
             <th>Method</th>
@@ -341,12 +589,123 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
           </tr>
         </thead>
         <tbody>
+          <tr><td colspan="2" style="text-align:center; font-style:italic; color:#888;">Axiomatic Methods</td></tr>
+          <tr><td>ZoomOut</td><td style="text-align:center;">33.7</td></tr>
           <tr><td>Smooth Shells</td><td style="text-align:center;">10.8</td></tr>
+          <tr><td>DiscreteOp</td><td style="text-align:center;">35.5</td></tr>
+          <tr><td colspan="2" style="text-align:center; font-style:italic; color:#888;">Unsupervised Methods</td></tr>
           <tr><td>Deep Shell</td><td style="text-align:center;">13.7</td></tr>
+          <tr><td>AttnFMaps</td><td style="text-align:center;">23.4</td></tr>
           <tr><td>ULRSSM</td><td style="text-align:center;">9.2</td></tr>
           <tr><td>HybridFMap</td><td style="text-align:center;">5.0</td></tr>
           <tr><td>DeepFAFM</td><td style="text-align:center;">6.2</td></tr>
-          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>3.3</strong></td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>2.9</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PCK curves -->
+    <div class="has-text-centered figure-panel" style="margin-top: 2rem;">
+      <img src="{{ '/assets/img/sgmatch/pck_curves.png' | relative_url }}" alt="PCK curves on SMAL, DT4D-H, and TOPKIDS" style="max-width: 100%;">
+      <p class="vis-caption has-text-centered">PCK curves and AUC values on SMAL, DT4D-H inter-class, and TOPKIDS. SGMatch consistently improves the area under the curve in challenging non-isometric and topology-noisy settings.</p>
+    </div>
+
+    <!-- Map Smoothness -->
+    <h3 class="title is-4 section-title" id="smoothness" style="margin-top: 2.75rem;">Map Smoothness</h3>
+    <div class="content abstract-content">
+      <p>Beyond point-wise geodesic accuracy, we evaluate the local smoothness of recovered maps using conformal distortion, surface coverage, Dirichlet energy, and bijectivity. SGMatch improves most metrics, with the clearest gains on non-isometric and topology-noisy datasets where intrinsic geometry is less reliable.</p>
+    </div>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth compact-table" style="min-width: 820px;">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Method</th>
+            <th style="text-align:center;">FAUST</th>
+            <th style="text-align:center;">SCAPE</th>
+            <th style="text-align:center;">SHREC'19</th>
+            <th style="text-align:center;">SMAL</th>
+            <th style="text-align:center;">DT4D-inter</th>
+            <th style="text-align:center;">TOPKIDS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="2">Conf. &darr;</td><td>HybridFMap</td><td style="text-align:center;">0.654</td><td style="text-align:center;">0.779</td><td style="text-align:center;">1.030</td><td style="text-align:center;">2.473</td><td style="text-align:center;">1.866</td><td style="text-align:center;">3.201</td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>0.639</strong></td><td style="text-align:center;"><strong>0.764</strong></td><td style="text-align:center;"><strong>0.787</strong></td><td style="text-align:center;"><strong>1.956</strong></td><td style="text-align:center;"><strong>1.563</strong></td><td style="text-align:center;"><strong>2.517</strong></td></tr>
+          <tr><td rowspan="2">Cov. (%) &uarr;</td><td>HybridFMap</td><td style="text-align:center;">83.3</td><td style="text-align:center;"><strong>82.5</strong></td><td style="text-align:center;">75.9</td><td style="text-align:center;">65.0</td><td style="text-align:center;"><strong>67.1</strong></td><td style="text-align:center;">63.3</td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>83.5</strong></td><td style="text-align:center;">81.9</td><td style="text-align:center;"><strong>76.1</strong></td><td style="text-align:center;"><strong>71.2</strong></td><td style="text-align:center;">66.3</td><td style="text-align:center;"><strong>63.9</strong></td></tr>
+          <tr><td rowspan="2">Dir.E &darr;</td><td>HybridFMap</td><td style="text-align:center;">2.96</td><td style="text-align:center;"><strong>3.11</strong></td><td style="text-align:center;">12.30</td><td style="text-align:center;">19.29</td><td style="text-align:center;"><strong>8.44</strong></td><td style="text-align:center;">98.30</td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>2.95</strong></td><td style="text-align:center;">3.27</td><td style="text-align:center;"><strong>6.30</strong></td><td style="text-align:center;"><strong>10.20</strong></td><td style="text-align:center;">8.70</td><td style="text-align:center;"><strong>48.33</strong></td></tr>
+          <tr><td rowspan="2">Bij. &darr;</td><td>HybridFMap</td><td style="text-align:center;"><strong>0.0049</strong></td><td style="text-align:center;"><strong>0.0060</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">0.0285</td><td style="text-align:center;"><strong>0.0130</strong></td><td style="text-align:center;">&mdash;</td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;">0.0052</td><td style="text-align:center;">0.0064</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;"><strong>0.0175</strong></td><td style="text-align:center;">0.0166</td><td style="text-align:center;">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="has-text-centered figure-panel" style="margin-top: 2rem;">
+      <img src="{{ '/assets/img/sgmatch/conformal_pck.png' | relative_url }}" alt="Conformal-distortion PCK curves" style="max-width: 100%;">
+      <p class="vis-caption has-text-centered">Conformal-distortion-based smoothness comparison on SMAL, DT4D-H inter-class, and TOPKIDS. Higher curves indicate more correspondences under a given distortion threshold.</p>
+    </div>
+
+    <!-- Regularization and Ablation -->
+    <h3 class="title is-4 section-title" id="ablation" style="margin-top: 2.75rem;">Regularization and Ablation</h3>
+    <div class="content abstract-content">
+      <p>We isolate the contribution of CFM by comparing it with endpoint matching, cycle consistency, and synchronous diffusion under the same SGMatch backbone. We also ablate the main feature-fusion components on SMAL.</p>
+    </div>
+
+    <h3 class="title is-4 section-title" style="margin-top: 1.5rem;">Alternative Smoothness Regularizers</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth compact-table" style="min-width: 840px;">
+        <thead>
+          <tr>
+            <th rowspan="2">Variant</th>
+            <th colspan="5" style="text-align:center;">SMAL</th>
+            <th colspan="4" style="text-align:center;">TOPKIDS</th>
+          </tr>
+          <tr>
+            <th style="text-align:center;">Geo. &darr;</th>
+            <th style="text-align:center;">Conf. &darr;</th>
+            <th style="text-align:center;">Dir.E &darr;</th>
+            <th style="text-align:center;">Bij. &darr;</th>
+            <th style="text-align:center;">Cov. &uarr;</th>
+            <th style="text-align:center;">Geo. &darr;</th>
+            <th style="text-align:center;">Conf. &darr;</th>
+            <th style="text-align:center;">Dir.E &darr;</th>
+            <th style="text-align:center;">Cov. &uarr;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>w/o CFM</td><td style="text-align:center;">2.7</td><td style="text-align:center;">2.32</td><td style="text-align:center;">10.55</td><td style="text-align:center;">0.0210</td><td style="text-align:center;">66.8</td><td style="text-align:center;">3.4</td><td style="text-align:center;">2.92</td><td style="text-align:center;">45.64</td><td style="text-align:center;">63.5</td></tr>
+          <tr><td>Endpoint-only</td><td style="text-align:center;">2.7</td><td style="text-align:center;">2.46</td><td style="text-align:center;">14.37</td><td style="text-align:center;">0.0225</td><td style="text-align:center;">65.0</td><td style="text-align:center;">3.4</td><td style="text-align:center;">2.76</td><td style="text-align:center;">50.92</td><td style="text-align:center;">63.8</td></tr>
+          <tr><td>Cycle-consistency</td><td style="text-align:center;">2.8</td><td style="text-align:center;">2.29</td><td style="text-align:center;">10.53</td><td style="text-align:center;">0.0201</td><td style="text-align:center;">67.2</td><td style="text-align:center;">3.4</td><td style="text-align:center;">2.75</td><td style="text-align:center;"><strong>42.42</strong></td><td style="text-align:center;">63.7</td></tr>
+          <tr><td>Sync. Diff.</td><td style="text-align:center;">2.6</td><td style="text-align:center;">2.45</td><td style="text-align:center;">13.48</td><td style="text-align:center;">0.0221</td><td style="text-align:center;">64.7</td><td style="text-align:center;">3.5</td><td style="text-align:center;">2.79</td><td style="text-align:center;">50.14</td><td style="text-align:center;">63.8</td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><strong>2.5</strong></td><td style="text-align:center;"><strong>1.96</strong></td><td style="text-align:center;"><strong>10.20</strong></td><td style="text-align:center;"><strong>0.0175</strong></td><td style="text-align:center;"><strong>71.2</strong></td><td style="text-align:center;"><strong>2.9</strong></td><td style="text-align:center;"><strong>2.52</strong></td><td style="text-align:center;">48.33</td><td style="text-align:center;"><strong>63.9</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="title is-4 section-title" style="margin-top: 2rem;">Ablation Study</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth compact-table" style="min-width: 760px;">
+        <thead>
+          <tr>
+            <th>Variant</th>
+            <th style="text-align:center;">Geo.</th>
+            <th style="text-align:center;">Sem.</th>
+            <th style="text-align:center;">Gating</th>
+            <th style="text-align:center;">Attention</th>
+            <th style="text-align:center;">Heat Diff.</th>
+            <th style="text-align:center;">CFM</th>
+            <th style="text-align:center;">Geo.Err &darr;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Geo. only</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-times cross-mark"></i></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">3.2</td></tr>
+          <tr><td>Sem. only</td><td style="text-align:center;"><i class="fas fa-times cross-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">21.2</td></tr>
+          <tr><td>Gating only</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">none</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">3.6</td></tr>
+          <tr><td>Local attention only</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-times cross-mark"></i></td><td style="text-align:center;">local</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">2.6</td></tr>
+          <tr><td>Gating + global attention</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">global</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">2.6</td></tr>
+          <tr><td>w/o heat diffusion</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">local</td><td style="text-align:center;"><i class="fas fa-times cross-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">3.0</td></tr>
+          <tr style="background-color: #f0f7ff;"><td><strong>Ours</strong></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;">local</td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><i class="fas fa-check check-mark"></i></td><td style="text-align:center;"><strong>2.5</strong></td></tr>
         </tbody>
       </table>
     </div>
@@ -354,10 +713,10 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
 </section>
 
 <!-- Qualitative Results -->
-<section class="section" style="padding-top: 0;">
+<section class="section" id="qualitative">
   <div class="container is-max-desktop">
     <h2 class="title is-3 section-title">Qualitative Results</h2>
-    <div class="has-text-centered">
+    <div class="has-text-centered figure-panel">
       <img src="{{ '/assets/img/sgmatch/qualitative.png' | relative_url }}" alt="Qualitative comparison" style="max-width: 100%;">
     </div>
     <div class="content abstract-content" style="margin-top: 1rem;">
@@ -367,13 +726,13 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
 </section>
 
 <!-- BibTeX -->
-<section class="section" id="BibTeX">
+<section class="section" id="bibtex">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 section-title">BibTeX</h2>
-    <pre class="bibtex-body"><code>@article{ye2026sgmatch,
+    <pre class="bibtex-body"><code>@inproceedings{ye2026sgmatch,
   title     = {SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularization},
   author    = {Ye, Tianwei and Mei, Xiaoguang and Xia, Yifan and Fan, Fan and Huang, Jun and Ma, Jiayi},
-  journal   = {arXiv preprint arXiv:2603.12937},
+  booktitle = {European Conference on Computer Vision (ECCV)},
   year      = {2026}
 }</code></pre>
   </div>
@@ -392,3 +751,4 @@ title: "SGMatch: Semantic-Guided Non-Rigid Shape Matching with Flow Regularizati
 
 </body>
 </html>
+
