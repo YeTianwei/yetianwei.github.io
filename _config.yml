@@ -6,11 +6,11 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Tianwei
 middle_name:
 last_name: Ye
-email: twye2001@gmail.com
-current_status: "Incoming Ph.D. Student"
+email: tianweiye@u.nus.edu
+current_status: "Ph.D. Student"
 lab_info: "CVRP Lab, School of Computing"
 affiliation: "National University of Singapore"
-email_contact: "Email: twye2001@gmail.com"
+email_contact: "Email: tianweiye@u.nus.edu"
 description: >
   Tianwei Ye's personal academic homepage. Research interests include computer vision, 3D shape matching, and 3D generation for Embodied AI.
 footer_text:
