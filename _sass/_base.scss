@@ -1572,6 +1572,26 @@ ninja-keys::part(ninja-input-wrapper) {
   gap: 0.6rem;
 }
 
+.news-list.news-scrollable {
+  max-height: 13rem; // roughly 4 items visible, scroll for the rest
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79, 70, 229, 0.3) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(79, 70, 229, 0.3);
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
 .news-item {
   display: flex;
   align-items: baseline;
