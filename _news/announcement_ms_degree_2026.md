@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received my Master degree!
+Received my Master's degree!
